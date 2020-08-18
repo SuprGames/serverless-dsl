@@ -11,7 +11,7 @@ The current version of Serverless K-DSL supports the generation of the following
 
 The library provide a set of classes that can be used to annotate your own classes.
 
-## Usage example
+## Definitions and components examples
 
 ***Considerations***
 The parameter `name` is present in all the components but it is optional, and if it is not provided, a name following the naming convention for the Lambdas will be created from the Handler class name, this is a lower case name split with dashes in the middle.
@@ -127,3 +127,15 @@ Will generate the following entry in the Serverless.yml file when the generation
 **Note 1** Providing a reference to an environment variable that already exisist in the serverless-base.yml is supported, the only thing to consider is that, since you are writting ${bla bla bla} and this looks like Kotlin code you will need to skip the $ symbol how we did in the example.
 
 **Note 2** The event to listen is transformed as a detail-type pattern with the complete class qualified name. This is possible because when we publish the event in EventBridge we MAKE SURE that the Detail-Type attribute is filled with the Event qualified name
+
+## Manual execution
+
+// I need to fill this section, the functionality is implemented already
+
+## Integration with Gradle
+
+// I need to fill this section, the functionality is implemented already
+
+## Integration with GithubActions
+
+// I need to fill this section, the functionality is implemented already
