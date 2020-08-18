@@ -1,2 +1,2 @@
-# serverless-dsl
-Serverless DSL library
+# Serverless K-DSL
+
