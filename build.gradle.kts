@@ -5,6 +5,7 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 plugins {
     kotlin("jvm") version "1.3.71"
     id("com.github.johnrengelman.shadow") version ("6.0.0")
+    `maven-publish`
 }
 
 group = "io.suprgames"
@@ -30,3 +31,28 @@ tasks.build {
 dependencies {
     api(kotlin("stdlib-jdk8"))
 }
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/suprgames/serverless-kdsl")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+}
+/*
+<project ...>
+  ...
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/octocat/hello-world</url>
+    </repository>
+  </distributionManagement>
+</project>
+ */
