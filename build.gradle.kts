@@ -44,6 +44,9 @@ tasks {
 publishing {
     publications {
         create<MavenPublication>("kotlin") {
+            groupId = "io.suprgames"
+            artifactId = "serverless-kdsl"
+            version = System.getenv("steps.release.outputs.version")
             from(components["kotlin"])
         }
     }
@@ -58,16 +61,3 @@ publishing {
         }
     }
 }
-
-/*
-<project ...>
-  ...
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/octocat/hello-world</url>
-    </repository>
-  </distributionManagement>
-</project>
- */
