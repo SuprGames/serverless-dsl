@@ -27,6 +27,10 @@ jobs:
           bump_version_scheme: minor
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check Output Parameters
+        run: |
+          echo "Got tag name ${{ steps.release.outputs.tag_name }}"
+          echo "Got release version ${{ steps.release.outputs.version }}"
       - name: Publish package
         run: ./gradlew publish
         env:
