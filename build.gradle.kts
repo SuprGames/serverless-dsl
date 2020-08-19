@@ -46,7 +46,7 @@ publishing {
         create<MavenPublication>("kotlin") {
             groupId = "io.suprgames"
             artifactId = "serverless-kdsl"
-            version = System.getenv("steps.release.outputs.version")
+            version = System.getenv("NEW_VERSION")
             from(components["kotlin"])
         }
     }
