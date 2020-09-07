@@ -16,7 +16,15 @@ enum class CognitoPoolTriggers {
     CreateAuthChallenge,
     CustomMessage,
     DefineAuthChallenge,
+
+    /**
+     * Triggered when the user has been signed in.
+     */
     PostAuthentication,
+
+    /**
+     * Triggered when a new user is confirmed.
+     */
     PostConfirmation,
     PreAuthentication,
     PreSignUp,
